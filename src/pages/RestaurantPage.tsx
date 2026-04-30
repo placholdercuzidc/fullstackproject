@@ -75,11 +75,11 @@ function RestaurantPage() {
   });
 
   return (
-    <div style={{ padding: '20px', maxWidth: '900px', margin: '0 auto' }}>
+    <div style={{ padding: '20px', maxWidth: '900px', margin: '0 auto', fontFamily: "Voltaire" }}>
       <h2>Add a Restaurant & Review</h2>
 
       <div style={{ background: '#f4f4f4', padding: '20px', borderRadius: '8px', marginBottom: '30px' }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', fontFamily: 'Work Sans' }}>
           <input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} style={inputStyle} />
           <input placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)} style={inputStyle} />
           <input placeholder="Cuisine" value={cuisine} onChange={(e) => setCuisine(e.target.value)} style={inputStyle} />
@@ -92,7 +92,7 @@ function RestaurantPage() {
             placeholder="Review comment..."
             value={comment}
             onChange={(e) => setComment(e.target.value)}
-            style={{ ...inputStyle, width: '100%', height: '60px' }}
+            style={{ ...inputStyle, width: '100%', height: '60px', fontFamily: 'Work Sans'}}
           />
           <button onClick={addEntry} style={buttonStyle}>Submit</button>
         </div>
@@ -121,8 +121,8 @@ function RestaurantPage() {
   );
 }
 
-const inputStyle = { padding: '8px', borderRadius: '4px', border: '1px solid #ccc' };
-const buttonStyle = { padding: '10px 20px', background: '#28a745', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' };
+const inputStyle = { padding: '8px', borderRadius: '4px', border: '1px solid #ccc', fontFamily: 'Work Sans' };
+const buttonStyle = { padding: '10px 20px', background: '#506778', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontFamily: 'Work Sans' };
 const listItemStyle = {
   display: 'flex',
   justifyContent: 'space-between',

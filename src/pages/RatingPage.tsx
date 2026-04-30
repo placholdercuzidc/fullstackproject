@@ -44,10 +44,11 @@ const RatingPage = () => {
   const avg = reviews.length > 0 ? totalRatingScore / reviews.length : 0;
 
   return (
-    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'sans-serif' }}>
+    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', fontFamily: 'Voltaire' }}>
       <h1 style={{ color: '#333' }}>Search Restaurant Ratings</h1>
 
-      <div style={{ display: 'flex', gap: '10px', marginBottom: '30px', background: '#fff', padding: '15px', borderRadius: '8px', border: '1px solid #ddd' }}>
+      <div style={{ display: 'flex', gap: '10px', marginBottom: '30px', background: '#fff', padding: '15px', 
+        borderRadius: '8px', border: '1px solid #ddd', fontFamily: 'Work Sans' }}>
         <input
           placeholder="Restaurant Name (e.g. McDonalds)"
           value={name}
@@ -68,7 +69,7 @@ const RatingPage = () => {
       {reviews.length > 0 ? (
         <div>
           <div style={{ padding: '20px', background: '#e3f2fd', borderRadius: '12px', textAlign: 'center', marginBottom: '20px' }}>
-            <h2 style={{ margin: 0, color: '#1976d2' }}>
+            <h2 style={{ margin: 0, color: '#506778' }}>
                {name} Score: {Number(avg).toFixed(1)} / 5.0
             </h2>
             <p style={{ color: '#555' }}>Based on {reviews.length} total reviews</p>
@@ -109,12 +110,13 @@ const inputStyle = {
   padding: '12px',
   borderRadius: '6px',
   border: '1px solid #ccc',
-  fontSize: '1rem'
+  fontSize: '1rem',
+  fontFamily: 'Work Sans'
 };
 
 const buttonStyle = {
   padding: '0 25px',
-  background: '#0070f3',
+  background: '#506778',
   color: 'white',
   border: 'none',
   borderRadius: '6px',
