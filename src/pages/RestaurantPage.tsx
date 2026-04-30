@@ -22,7 +22,7 @@ function RestaurantPage() {
   const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
 
   const fetchRestaurants = async () => {
-    
+
     const response = await axios.get(`${API_URL}/restaurants`);
     setRestaurants(response.data);
   };
@@ -58,9 +58,15 @@ function RestaurantPage() {
   };
 
   const sortedRestaurants = [...restaurants].sort((a, b) => {
-    if (sortBy === 'name') return a.name.localeCompare(b.name);
-    if (sortBy === 'rating') return (b.avgRating || 0) - (a.avgRating || 0);
-    if (sortBy === 'location') return a.location.localeCompare(b.location);
+    if (sortBy === 'name') {
+      return (a.name || '').localeCompare(b.name || '');
+    }
+    if (sortBy === 'location') {
+      return (a.location || '').localeCompare(b.location || '');
+    }
+    if (sortBy === 'rating') {
+      return (b.avgRating || 0) - (a.avgRating || 0);
+    }
     return 0;
   });
 
