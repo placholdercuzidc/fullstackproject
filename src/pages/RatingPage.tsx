@@ -55,7 +55,7 @@ const RatingPage = () => {
           style={inputStyle}
         />
         <input
-          placeholder="Location (Optional)"
+          placeholder="Location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           style={inputStyle}
