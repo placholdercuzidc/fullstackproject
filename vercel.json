@@ -1,5 +1,10 @@
 {
   "version": 2,
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/src/server.ts" },
+    { "source": "/assets/(.*)", "destination": "/assets/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
   "builds": [
     {
       "src": "server.ts",
@@ -20,9 +25,6 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/server.ts" },
-    { "source": "/(.*)", "destination": "/index.html" }
   ]
+
 }
