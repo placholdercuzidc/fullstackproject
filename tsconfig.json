@@ -12,7 +12,7 @@
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
-    "jxs": "react-jsx",
+    "jsx": "react-jsx",
     /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
