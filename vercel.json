@@ -2,7 +2,7 @@
   "version": 2,
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/src/server.ts" },
-    { "source": "/assets/(.*)", "destination": "/assets/$1" },
+    { "handle": "filesystem" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "builds": [
