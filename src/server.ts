@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
-import express, { Request, Response } from 'express';
+import express, { type Request, type Response } from 'express';
 import cors from 'cors';
 import mysql from 'mysql2/promise';
 import fs from 'fs';
@@ -16,7 +16,7 @@ const pool = mysql.createPool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: Number(process.env.DB_PORT), 
+  port: Number(process.env.DB_PORT),
   ssl: {
     ca: process.env.DB_CA || fs.readFileSync(path.join(__dirname, 'ca.pem')),
     rejectUnauthorized: false,
@@ -62,7 +62,7 @@ app.get('/api/reviews', async (req: Request, res: Response) => {
   }
 });
 
-app.get('/api/restaurants', async (req: Request, res: Response) => {
+app.get('/api/restaurants', async (_req: Request, res: Response) => {
   try {
     const query = `
       SELECT

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-// Updated interface to support the average scores from your SQL query
 interface Restaurant {
   id: number;
   name: string;
@@ -18,10 +17,8 @@ function RestaurantPage() {
   const [rating, setRating] = useState<number>(5);
   const [comment, setComment] = useState<string>('');
 
-  // Added sorting state
   const [sortBy, setSortBy] = useState<string>('name');
 
-  // Use the environment variable; defaults to localhost for development
   const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
 
   const fetchRestaurants = async (): Promise<void> => {
@@ -51,7 +48,6 @@ function RestaurantPage() {
 
       await axios.post(`${API_URL}/reviews`, newReviewEntry);
 
-      // Clear form
       setName('');
       setLocation('');
       setCuisine('');
@@ -64,7 +60,6 @@ function RestaurantPage() {
     }
   };
 
-  // Sorting logic before rendering
   const sortedRestaurants = [...restaurants].sort((a, b) => {
     if (sortBy === 'name') return a.name.localeCompare(b.name);
     if (sortBy === 'rating') return (b.avgRating || 0) - (a.avgRating || 0);
