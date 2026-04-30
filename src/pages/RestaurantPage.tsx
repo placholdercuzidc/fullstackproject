@@ -22,9 +22,13 @@ function RestaurantPage() {
   const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
 
   const fetchRestaurants = async () => {
-
-    const response = await axios.get(`${API_URL}/restaurants`);
-    setRestaurants(response.data);
+    try {
+      const response = await axios.get(`${API_URL}/restaurants`);
+      console.log("Raw Data from API:", response.data); // <--- OPEN YOUR CONSOLE (F12)
+      setRestaurants(response.data);
+    } catch (err) {
+      console.error("Failed to fetch:", err);
+    }
   };
 
   useEffect(() => {
