@@ -114,9 +114,6 @@ function RestaurantPage() {
               <strong>{r.name}</strong> ({r.cuisine})<br />
               <small>{r.location}</small>
             </div>
-            <div style={{ fontWeight: 'bold', color: '#f39c12' }}>
-              ★ {r.avgRating ? Number(r.avgRating).toFixed(1) : 'N/A'}
-            </div>
           </li>
         ))}
       </ul>
