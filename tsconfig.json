@@ -5,16 +5,13 @@
     "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "types": ["vite/client"],
     "skipLibCheck": true,
-
-    /* Bundler mode */
+    "strict": true,
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
-    "jsx": "react-jsx",
-    /* Linting */
-    "noUnusedLocals": true,
+    "jsx": "react-jsx", "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
