@@ -15,7 +15,8 @@ const NavLink = ({ to, children }: { to: string, children: React.ReactNode }) =>
       padding: '8px 16px',
       borderRadius: '4px',
       background: isActive ? 'rgba(255,255,255,0.2)' : 'transparent',
-      transition: 'background 0.3s'
+      transition: 'background 0.3s',
+      fontFamily: 'Voltaire'
     }}>
       {children}
     </Link>
@@ -30,13 +31,15 @@ function App() {
           padding: '10px 40px',
           display: 'flex',
           alignItems: 'center',
-          background: '#0070f3',
+          background: '#506778',
           boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
           gap: '20px',
         }}>
-          <h2 style={{ color: 'white', marginRight: '20px', fontSize: '1.2rem' }}>🍽️ ReviewIt</h2>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/ratings">Search Ratings</NavLink>
+          <h2 style={{ color: 'white', marginRight: '20px', fontFamily: "'Rubik Mono One', sans-serif", fontSize: '1.2rem' }}>🍽️ ReviewIt</h2>
+          <div style={{ marginLeft: 'auto', display: 'flex', gap: '20px'}}>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/ratings">Search Ratings</NavLink>
+          </div>
         </nav>
 
 
